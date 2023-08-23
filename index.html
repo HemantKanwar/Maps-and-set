@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps and Set</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h2>
+      Q1 => You are given a string (STR) of length N, consisting of only the
+      lower case English alphabet. Your task is to remove all the duplicate
+      occurrences of characters in the string.
+      <br />
+      Input: abcadeecfb
+      <br />
+      Output: abcdef"
+
+      <pre>
+        Ans => const input = "abcadeecfb";
+        const output = removeDuplicates(input);
+
+        function removeDuplicates(str) {
+        let result = '';
+        let charSet = new Set();
+
+        for (let char of str) {
+        if (!charSet.has(char)) {
+            charSet.add(char);
+            result += char;
+            }
+        }
+
+         return result;
+        }
+
+        console.log(output);
+      </pre>
+    </h2>
+
+    <h2>
+        Q2 => You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+           
+          <br />
+           Input:
+           abcadeecfb
+            
+           <br />
+           Output:<br />
+           a=2<br />
+           b=2<br />
+           c=2<br />
+           d=1<br />
+           e=2<br />
+           f=1<br />
+
+           <pre>
+            Ans => function countAlphabetOccurrences(str) {
+                const charCount = {};
+            
+                for (let char of str) {
+                    charCount[char] = (charCount[char] || 0) + 1;
+                }
+            
+                for (let char in charCount) {
+                    console.log(`${char}=${charCount[char]}`);
+                }
+            }
+            
+            const input = "abcadeecfb";
+            countAlphabetOccurrences(input);
+            
+           </pre>
+    </h2>
+  </body>
+</html>
+
+<br />
